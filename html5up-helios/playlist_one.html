@@ -1,0 +1,442 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>OneMusicList</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+	<style>
+		
+		input[type=checkbox]{
+		-webkit-writing-mode: horizontal-tb !important;
+		text-rendering: auto;
+		color: -internal-light-dark(black, white);
+		letter-spacing: normal;
+		word-spacing: normal;
+		text-transform: none;
+		text-indent: 0px;
+		text-shadow: none;
+		display: inline-block;
+		text-align: start;
+		appearance: auto;
+		background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+		-webkit-rtl-ordering: logical;
+		cursor: text;
+		margin: 0em;
+		font: 400 13.3333px Arial;
+		padding: 1px 2px;
+		border-width: 2px;
+		border-style: inset;
+		border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+		border-image: initial;
+		}
+
+		.play-progress-box{display: inline-block;font-size: 14px;background: #fff;width:120px;height: 4px;border: solid 0.5px #ddd;vertical-align: middle;}
+		.play-progress-bar{width:0;height: 100%;background: gray;}
+
+
+		
+
+	</style>
+
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1><a href="index.html" id="logo">스플리</a></h1>
+							</header>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li>
+									<a href="#">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li><a href="#">Etiam dolore nisl</a></li>
+										<li>
+											<a href="#">And a submenu &hellip;</a>
+											<ul>
+												<li><a href="#">Lorem ipsum dolor</a></li>
+												<li><a href="#">Phasellus consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li>
+								<li><a href="left-sidebar.html">Left Sidebar</a></li>
+								<li><a href="right-sidebar.html">Right Sidebar</a></li>
+								<li><a href="no-sidebar.html">No Sidebar</a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Main -->
+				<div class="wrapper style1">
+
+					<div class="container">
+						<article id="main" class="special">
+							<header>
+								<h2><a href="#">서프 뮤직의 시원하고 청량한 매력!</a></h2>
+								<p class='tag'>
+									#서핑 #청량한 #록 #서프뮤직 #여름 #휴가 #바다 #시원한
+								</p>
+							</header>
+							<table border="1" style="width:100%">
+									
+											<colgroup>
+												<col style="width: 25px"><!-- checkbox -->
+												<col style="width: 60px"><!-- 순서 & 순위 -->
+												<col style="width: 60px"><!-- 앨범이미지 -->
+												<col><!-- 곡정보 -->
+												<col style="width: 250px"><!-- 앨범 -->
+												<col style="width: 111px"><!-- 좋아요 -->
+												<col style="width: 58px"><!-- 듣기 -->
+												
+											</colgroup>
+									
+									
+								
+								<thead>
+								
+								
+										<tr>
+											<th scope="col">
+												<div class="wrap t_right"><input type="checkbox" title="곡 목록 전체 선택" class="input_check d_checkall"></div>
+											</th>
+											<th scope="col">
+												<div class="wrap t_center"><span class="rank">번호</span></div>
+											</th>
+											<th scope="col">
+												<div class="wrap none">앨범 이미지</div> <!--앨범 이미지-->
+											</th>
+											<th scope="col">
+												<div class="wrap pd_l_12" >곡정보</div>
+											</th>
+											<th scope="col">
+												<div class="wrap pd_l_12">재생</div>
+											</th>						
+											<th scope="col">
+												<div class="wrap pd_l_30">time</div>
+											</th>
+											<th scope="col">
+												<div class="wrap t_center">volume</div>
+											</th>
+											
+										</tr>				
+									
+												
+								</thead>
+								<tbody>
+						
+											
+											<tr><div class="onerow">
+												
+												<!-- 체크박스 -->
+												<td><div class="wrap t_right"><input type="checkbox" title="Surfin' U.S.A. (Stereo) 곡 선택" class="input_check " name="input_check" value="5021128" ></div></td>
+												<!-- 순서 -->
+												<td><div class="wrap t_center"><span class="rank ">1</span></div></td>
+												<!-- 앨범 이미지 -->
+												<td><div class="wrap">
+													<a href="#" title="Surfin' USA (Mono &amp; Stereo Remaster)" class="image_typeAll">
+														<img onerror="WEBPOCIMG.defaultAlbumImg(this);" width="60" height="60" src="https://cdnimg.melon.co.kr/cm/album/images/001/41/034/141034_500.jpg/melon/resize/120/quality/80/optimize" >
+														<span class="bg_album_frame"></span>
+													</a>
+												</div></td>
+												<!-- 곡 정보 :곡제목 가수명 -->
+												<td><div class="wrap">
+													<div class="wrap_song_info">
+														<div class="songName"><span>
+															
+															<a href="#" title="Surfin' U.S.A. (Stereo) 재생">Surfin' U.S.A. (Stereo)</a>
+														</span></div>
+														<div class="singer">
+															
+															<a href="#" title="The Beach Boys - 페이지 이동">The Beach Boys</a><span class="singer_page" style="display: none;"><a href="#');" title="The Beach Boys - 페이지 이동">The Beach Boys</a></span>
+														</div>
+														
+													</div>
+												</div></td>
+												<!-- 재생  -->
+												<td><div class="wrap">
+													<div class="play_start">
+															<img class="palyButton" id=playImage src="images/playgray.png" width="40" height="50">
+															<div class="play-progress-box">
+																<div class="play-progress-bar"></div>
+														</div>
+													</div>
+												</div></td>						
+												<td><div class="wrap">
+													<div class="play-time end"> 00:00 </div>
+													<span class="cnt">
+													<span class="none">총건수</span>
+													76</span></button>
+												</div></td>
+												<td><div class="wrap t_center">
+													<button type="button" title="듣기" class="button_icons play " onclick="melon.play.playSong('67220101',5021128);"><span class="none">듣기</span></button>
+												</div></td>
+												
+											</div></tr>								
+									
+						
+											
+											<tr><div class="onerow">
+												<td><div class="wrap t_right"><input type="checkbox" title="Surf City 곡 선택" class="input_check " name="input_check" value="5050680"></div></td>
+												<td><div class="wrap t_center"><span class="rank ">2</span></div></td>
+												<td><div class="wrap">
+													<a href="javascript:melon.link.goAlbumDetail('144122');" title="Surf City: The Best Of Jan &amp; Dean" class="image_typeAll">
+														<img onerror="WEBPOCIMG.defaultAlbumImg(this);" width="60" height="60" src="https://cdnimg.melon.co.kr/cm/album/images/001/44/122/144122_500.jpg/melon/resize/120/quality/80/optimize" alt="Surf City: The Best Of Jan &amp; Dean - 페이지 이동">
+														<span class="bg_album_frame"></span>
+													</a>
+												</div></td>
+												
+												<td><div class="wrap">
+													<div class="wrap_song_info">
+														<div class="ellipsis rank01"><span>
+															
+															
+															
+															<a href="javascript:melon.play.playSong('67220101',5050680);" title="Surf City 재생">Surf City</a>
+														</span></div><br>
+														<div class="ellipsis rank02">
+															
+															
+															<a href="javascript:melon.link.goArtistDetail('108186');" title="Jan &amp; Dean - 페이지 이동">Jan &amp; Dean</a><span class="checkEllipsis" style="display: none;"><a href="javascript:melon.link.goArtistDetail('108186');" title="Jan &amp; Dean - 페이지 이동">Jan &amp; Dean</a></span>
+														</div>
+														
+													</div>
+												</div></td>	
+												<td><div class="wrap">
+													<div class="wrap_song_info">
+														<div class="ellipsis rank03">
+															<a href="javascript:melon.link.goAlbumDetail('144122');" title="Surf City: The Best Of Jan &amp; Dean - 페이지 이동">Surf City: The Best Of Jan &amp; Dean</a>
+														</div>
+													</div>
+												</div></td>						
+												<td><div class="wrap">
+													<button type="button" class="button_etc like" title="Surf City 좋아요" data-song-no="5050680" data-song-menuid="67220101"><span class="odd_span">좋아요</span>
+													<span class="cnt">
+													<span class="none">총건수</span>
+													44</span></button>
+												</div></td>
+												<td><div class="wrap t_center">
+													<button type="button" title="듣기" class="button_icons play " onclick="melon.play.playSong('67220101',5050680);"><span class="none">듣기</span></button>
+												</div></td>
+												
+											</div></tr>								
+											
+									
+								</tbody>
+							</table>
+							
+						</article>
+						<hr />
+						<div class="row">
+							<article class="col-4 col-12-mobile special">
+								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
+								<header>
+									<h3><a href="#">Gravida aliquam penatibus</a></h3>
+								</header>
+								<p>
+									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
+									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
+								</p>
+							</article>
+							<article class="col-4 col-12-mobile special">
+								<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+								<header>
+									<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+								</header>
+								<p>
+									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
+									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
+								</p>
+							</article>
+							<article class="col-4 col-12-mobile special">
+								<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
+								<header>
+									<h3><a href="#">Magna laoreet et aliquam</a></h3>
+								</header>
+								<p>
+									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
+									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
+								</p>
+							</article>
+						</div>
+					</div>
+
+				</div>
+
+			<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+
+							<!-- Tweets -->
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon brands fa-twitter circled"><span class="label">Tweets</span></h2>
+									</header>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
+												<span class="timestamp">5 minutes ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Hendrerit rutrum quisque.
+												<span class="timestamp">30 minutes ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
+												<span class="timestamp">3 hours ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
+												<span class="timestamp">5 hours ago</span>
+											</article>
+										</li>
+									</ul>
+								</section>
+
+							<!-- Posts -->
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon solid fa-file circled"><span class="label">Posts</span></h2>
+									</header>
+									<ul class="divided">
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Nisl fermentum integer</a></h3>
+												</header>
+												<span class="timestamp">3 hours ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Phasellus portitor lorem</a></h3>
+												</header>
+												<span class="timestamp">6 hours ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Magna tempus consequat</a></h3>
+												</header>
+												<span class="timestamp">Yesterday</span>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Feugiat lorem ipsum</a></h3>
+												</header>
+												<span class="timestamp">2 days ago</span>
+											</article>
+										</li>
+									</ul>
+								</section>
+
+							<!-- Photos -->
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon solid fa-camera circled"><span class="label">Photos</span></h2>
+									</header>
+									<div class="row gtr-25">
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic15.jpg" alt="" /></a>
+										</div>
+									</div>
+								</section>
+
+						</div>
+						<hr />
+						<div class="row">
+							<div class="col-12">
+
+								<!-- Contact -->
+									<section class="contact">
+										<header>
+											<h3>Nisl turpis nascetur interdum?</h3>
+										</header>
+										<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+										<ul class="icons">
+											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+										</ul>
+									</section>
+
+								<!-- Copyright -->
+									<div class="copyright">
+										<ul class="menu">
+											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

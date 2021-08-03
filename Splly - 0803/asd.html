@@ -1,0 +1,474 @@
+<style>
+    * {
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 12px;
+  background-image: url("https://serving.photos.photobox.com/809129895ff63da6dec537ef4bbbe206d52535f8ecccbfcd0908c08ab2188a845c8e8a99.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.center {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 85vh;
+  background: inherit;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0px 1px 8px -2px #808080;
+}
+.center:before {
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: -7.5vh;
+  left: -5vw;
+  background: inherit;
+  box-shadow: inset 0 0 0 50vh rgba(255,255,255,0.2);
+  filter: blur(6px);
+}
+.inspiration {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Gill Sans', sans-serif;
+  color: #000;
+  text-shadow: 0 0 1px #fff;
+}
+.left,
+.right {
+  position: relative;
+}
+.left {
+  flex: 0 0 140px;
+}
+.left .controls {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+}
+.left .controls .close,
+.left .controls .minimize,
+.left .controls .maximize {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 3px;
+}
+.left .controls .close {
+  background-color: #fe5e57;
+}
+.left .controls .minimize {
+  background-color: #ffbd2e;
+}
+.left .controls .maximize {
+  background-color: #29ca42;
+}
+.left .menu,
+.left .playlists {
+  margin: 50px 20px;
+  color: rgba(51,51,51,0.7);
+}
+.left .menu .title,
+.left .playlists .title {
+  margin: 10px 0;
+}
+.left .menu .item,
+.left .playlists .item {
+  position: relative;
+  padding: 3px 0 3px 25px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.left .menu .item:hover:before,
+.left .playlists .item:hover:before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -18px;
+  width: 3px;
+  height: 17px;
+  background-color: #000;
+  border-radius: 0 3px 3px 0;
+}
+.left .menu .item:hover,
+.left .playlists .item:hover,
+.left .menu .item.highlight,
+.left .playlists .item.highlight {
+  color: #333;
+}
+.left .menu .item i.material-icons,
+.left .playlists .item i.material-icons {
+  position: absolute;
+  left: 0px;
+  top: 2px;
+  font-size: 15px;
+}
+.right {
+  flex: 1 1 auto;
+  padding-left: 30px;
+  background-color: transparent;
+  background-color: rgba(243,245,248,0.6);
+}
+.right .search {
+  position: relative;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+.right .search input {
+  width: 210px;
+  border: none;
+  outline: none;
+  background: none;
+}
+.right .account {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+.right .avatar {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  border-radius: 50%;
+  background-color: #333;
+}
+.right .row {
+  margin-top: 20px;
+}
+.right h1 {
+  display: inline;
+  font-size: 25px;
+}
+.right button.play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 77px;
+  height: 30px;
+  margin-left: 10px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  background: linear-gradient(to right, #6377ff, #94a2fe);
+  color: #fff;
+  vertical-align: top;
+}
+.right .albums {
+  margin-top: 15px;
+}
+.right .albums .album {
+  display: inline-block;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+.right .albums .album img {
+  width: 100px;
+  border-radius: 7px;
+}
+.right .albums .album .album-title {
+  text-align: center;
+  padding: 5px;
+}
+.right .split {
+  display: flex;
+}
+.right .daily-mix {
+  width: 55%;
+}
+.right .daily-mix h1 {
+  display: block;
+  margin-bottom: 20px;
+}
+.right .daily-mix .song {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+  margin-left: -5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.right .daily-mix .song > * {
+  width: 20%;
+}
+.right .daily-mix .song img {
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+}
+.right .daily-mix .song .duration {
+  width: 28px;
+}
+.right .play-lists {
+  width: 45%;
+  margin-left: 20px;
+}
+.right .play-lists h1 {
+  display: block;
+  margin-bottom: 20px;
+}
+.right .play-lists .playlist {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 44%;
+  height: 30%;
+  margin: 0 5% 5% 0;
+  border-radius: 5px;
+  box-shadow: 0px 1px 10px 1px #d3d3d3;
+  background-color: #fff;
+  cursor: pointer;
+}
+.right .play-lists i {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 16px;
+}
+.right .current-play {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+  margin-left: -30px;
+  background-color: #f3f5f8;
+}
+.right .current-play .info {
+  display: flex;
+}
+.right .current-play img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+.right .current-play .song {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+.right .current-play .song .name {
+  font-size: 16px;
+  font-weight: bold;
+}
+.right .current-play .song .artist {
+  margin-top: 3px;
+}
+.right .current-play .controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+}
+.right .current-play .controls > * {
+  margin: 0 10px;
+}
+.right .current-play .controls .prev,
+.right .current-play .controls .next {
+  color: #7584f4;
+}
+.right .current-play .controls .play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background: linear-gradient(to right bottom, #7584f4, #5463ec);
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.right .current-play .controls .repeat,
+.right .current-play .controls .shuffle {
+  color: #d3d3d3;
+}
+.right .current-play .controls .repeat i,
+.right .current-play .controls .shuffle i {
+  font-size: 15px;
+}
+.right .current-play .volume {
+  display: flex;
+  justify-content: flex-end;
+  width: 150px;
+}
+.right .current-play .volume i {
+  color: #7584f4;
+}
+.right .current-play .volume .slider {
+  position: relative;
+  width: 125px;
+  cursor: pointer;
+}
+.right .current-play .volume .slider__track-container {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 6px;
+  background-color: #fff;
+  transform: translateY(-50%);
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+.right .current-play .volume .slider__track {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #7584f4;
+  transform-origin: left top;
+  will-change: transform;
+  transform: scaleX(0.6);
+}
+.right .current-play .volume .slider__thumb {
+  width: 15px;
+  height: 15px;
+  transform: translate(70px, 5px);
+  background-color: #7584f4;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 5px -1px #b2b2b2;
+}
+
+</style>
+
+
+
+<div class="center">
+    <div class="left">
+        <div class="controls">
+            <div class="close"></div>
+            <div class="minimize"></div>
+            <div class="maximize"></div>
+        </div>
+        <div class="menu">
+            <div class="title">MENU</div>
+            <div class="item"><i class="material-icons">search</i><span>Explore</span></div>
+            <div class="item"><i class="material-icons">layers</i><span>Genres</span></div>
+            <div class="item"><i class="material-icons">radio</i><span>Radio</span></div>
+            <div class="item"><i class="material-icons">mic</i><span>Artists</span></div>
+            <div class="item"><i class="material-icons">album</i><span>Albums</span></div>
+            <div class="item"><i class="material-icons">settings</i><span>Settings</span></div>
+        </div>
+        <div class="playlists">
+            <div class="title">PLAYLISTS</div>
+            <div class="item"><i class="material-icons">list</i><span>Liked</span></div>
+            <div class="item"><i class="material-icons">list</i><span>Rap 2016</span></div>
+            <div class="item"><i class="material-icons">list</i><span>Classic Music</span></div>
+            <div class="item"><i class="material-icons">add_circle_outline</i><span>New Playlist</span></div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="search"><i class="material-icons">search</i><input placeholder="Find and listen to your favorate music..." /></div>
+        <div class="account"><i class="material-icons">notifications_none</i><img class="avatar" src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/350523/profile/profile-80.jpg?1" /></div>
+        <div class="row">
+            <h1>Featured Albums</h1><button class="play"><span>PLAY</span><i class="material-icons">play_arrow</i></button>
+        </div>
+        <div class="albums">
+            <div class="album"><img src="http://upload.wikimedia.org/wikipedia/en/d/d1/Rihanna_-_Loud.png" />
+                <div class="album-title">Loud &bull; Rihana</div>
+            </div>
+            <div class="album"><img src="https://upload.wikimedia.org/wikipedia/en/3/35/Flume_-_Skin.png" />
+                <div class="album-title">Skin &bull; Flume</div>
+            </div>
+            <div class="album"><img src="https://images.genius.com/a95fb19b13cc4891dccc94aae0c6b2df.640x640x1.jpg" />
+                <div class="album-title">Illusion &bull; Jubel</div>
+            </div>
+            <div class="album"><img src="https://upload.wikimedia.org/wikipedia/en/1/11/Dive_tycho_album.jpg" />
+                <div class="album-title">Dive &bull; Tycho</div>
+            </div>
+            <div class="album"><img src="https://upload.wikimedia.org/wikipedia/en/9/96/Future_cover.jpg" />
+                <div class="album-title">Future &bull; Future</div>
+            </div>
+            <div class="album"><img src="https://images.genius.com/27b630e743b1792609793ffc71699877.600x600x1.jpg" />
+                <div class="album-title">Evil Twin &bull; Guzior</div>
+            </div>
+        </div>
+        <div class="split">
+            <div class="daily-mix">
+                <h1>Daily Mix</h1>
+                <div class="song"><img src="https://upload.wikimedia.org/wikipedia/en/9/96/Future_cover.jpg" />
+                    <div>Mask Off</div>
+                    <div>Future</div>
+                    <div>Future</div>
+                    <div class="duration">3:25</div>
+                </div>
+                <div class="song"><img src="https://upload.wikimedia.org/wikipedia/en/1/11/Dive_tycho_album.jpg" />
+                    <div>Daydream</div>
+                    <div>Tycho</div>
+                    <div>Dive</div>
+                    <div class="duration">3:54</div>
+                </div>
+                <div class="song"><img src="https://images.genius.com/a95fb19b13cc4891dccc94aae0c6b2df.640x640x1.jpg" />
+                    <div>Illusion</div>
+                    <div>Jubel</div>
+                    <div>Illusion</div>
+                    <div class="duration">3:23</div>
+                </div>
+                <div class="song"><img src="http://upload.wikimedia.org/wikipedia/en/d/d1/Rihanna_-_Loud.png" />
+                    <div>Fading</div>
+                    <div>Rihanna</div>
+                    <div>Loud</div>
+                    <div class="duration">4:31</div>
+                </div>
+            </div>
+            <div class="play-lists">
+                <h1>Playlists</h1>
+                <div class="playlist">
+                    <div>Global Top 100</div><i class="material-icons">arrow_forward</i>
+                </div>
+                <div class="playlist">
+                    <div>Acoustic Music</div><i class="material-icons">arrow_forward</i>
+                </div>
+                <div class="playlist">
+                    <div>Songs For Sleep</div><i class="material-icons">arrow_forward</i>
+                </div>
+                <div class="playlist">
+                    <div>Electronic Beats</div><i class="material-icons">arrow_forward</i>
+                </div>
+            </div>
+        </div>
+        <div class="current-play">
+            <div class="info"><img src="https://upload.wikimedia.org/wikipedia/en/1/11/Dive_tycho_album.jpg" />
+                <div class="song">
+                    <div class="name">Daydream</div>
+                    <div class="artist">Tycho</div>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="repeat"><i class="material-icons">repeat</i></div>
+                <div class="prev"><i class="material-icons">fast_rewind</i></div>
+                <div class="play"><i class="material-icons">play_arrow</i></div>
+                <div class="next"><i class="material-icons">fast_forward</i></div>
+                <div class="shuffle"><i class="material-icons">shuffle</i></div>
+            </div>
+            <div class="volume"><i class="material-icons">volume_up </i>
+                <div class="slider" role="slider">
+                    <div class="slider__track-container">
+                        <div class="slider__track"></div>
+                    </div>
+                    <div class="slider__thumb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><a class="inspiration" href="https://dribbble.com/shots/3935760-Desktop-Music-Player/attachments/897873" target="_blank">inspiration</a>

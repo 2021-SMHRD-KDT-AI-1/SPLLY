@@ -1,0 +1,30 @@
+/* 검색 폼 */
+#search form {
+    margin: 0 auto;
+    width: 70%;
+    text-decoration: none;
+    position: relative; 
+}
+
+#search form:before { 
+    -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal;
+    text-rendering: auto; line-height: 1; text-transform: none !important; font-family: 'Font Awesome 5 Free'; font-weight: 900; 
+}
+
+#search form:before {
+    -moz-transform: scaleX(-1);-webkit-transform: scaleX(-1);-ms-transform: scaleX(-1);transform: scaleX(-1);
+    color: #7f888f;content: '\f002';cursor: default;display: block;font-size: 1.5em;height: 2.3em;
+    line-height: 2.3em;opacity: 0.325; position: absolute;right: 0;text-align: center;top: 0;width: 2em; 
+}
+
+/* 결과 영역 */
+
+.x_x { 
+    margin: 0 auto 2em;
+    width: 70%;
+    display: flex;
+    box-shadow: 1px 1px 5px #888;
+}
+.x_x img { width: 12em; height: 12em; }
+.x_x p { font-weight: bold; font-size: 2em; height: 50%; margin: 0; padding: 30px; }
+.x_x_tag { display: flex; height: 50%; padding: 30px; }

@@ -1,0 +1,514 @@
+@import url(fontawesome-all.min.css);
+
+#wrapper {
+    width: 100%;
+    background-color: #222;  
+}
+
+nav {
+    z-index: 500;
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+
+    background: #303030;
+}
+        
+    nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav .menu {
+        color: #fff;
+        margin: 0 20px;
+        padding: 10px 20px;
+    }
+
+        
+        nav .menu a {
+            color: #fff;
+            display: inline-block;
+            width: calc(100% - 40px);
+            height: 100%;
+        }
+        nav .menu:nth-child(1){
+            background: #fff; 
+            border-radius: 15px;
+            box-shadow: 1px 1px 30px #000;  
+        }
+
+        nav .menu:nth-child(1) a, 
+        nav .menu:nth-child(1)::before {
+            color: #222;
+        }
+
+        nav .menu:hover a,
+        nav .menu:hover::before {
+            color: rgb(255, 217, 0);
+            transition: all .2s;
+        }
+        
+
+        nav .menu::before {
+            color: #fff;
+            font-size: 1em;
+            height: 38px;
+            line-height: 38px;
+            position: relative;
+            left: 0px;
+            top: 1px;
+            width: 2em;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+        }
+
+        nav .menu:nth-child(1)::before {
+            content: '\f007';
+        }
+        nav .menu:nth-child(2)::before {
+            content: '\f07b';
+        }
+        nav .menu:nth-child(3)::before {
+            content: '\f65e';
+        }
+        nav .menu:nth-child(4)::before {
+            content: '\f302';
+        }
+        nav .menu:nth-child(5)::before {
+            content: '\f1e1';
+        }
+    
+
+
+
+
+
+
+#ufds {
+    position: relative;
+    left: 300px;
+    width: calc(100% - 300px);
+    min-height: 100vh;    
+}
+
+    #ufds >form{
+        position: relative;
+        width: 35vw;
+        padding: 50px;
+    }
+
+        #ufds >form::before {
+            color: #fff;
+            content: '\f002';
+            font-size: 1.2em;
+            height: 38px;
+            line-height: 38px;
+            position: absolute;
+            right: -50px;
+            top: 51px;
+            width: 2em;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+        }
+
+    #ufds >form input {
+        padding: 2px 18px;
+        width: 35vw;
+        min-width: 300px;
+        background: rgba(255, 255, 255, 0.4);
+        border: 0;
+        border-radius: 100px;
+        outline: none;
+        color: #fff;
+    }
+
+        #ufds >form input:focus {
+            box-shadow: 0 0 0 2px #999;
+        }
+
+
+
+
+    .asjjw {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 100px;
+    }    
+
+    .feuwasdss {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;  
+        width: 35%;
+        padding: 0 0 0 50px;
+    }
+
+        .feuwasdss p {
+            color: #fff;
+            font-weight: 600; 
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0 0 15px 7px;      
+        }
+
+        .feuwasdss div {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            
+        }
+
+        .feuwasdss img {
+            position: relative;
+            width: 100%;
+            transform: translate(0, -50%);
+            top: 50%;
+        }
+
+        
+
+
+
+
+
+aside {
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 77px;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: saturate(180%) blur(10px);
+    box-shadow: 1px 1px 20px #222;
+}
+
+aside audio {
+    width: 100%;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+#main {
+    position: relative;
+    left: 0px;
+    width: 100%;
+
+}
+
+
+
+
+
+/* Carousel */
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0 20px 0;
+    margin-bottom: 0;
+}
+
+    .carousel .forward, .carousel .backward {
+        position: absolute;
+        top: 32.5%;
+        width: 60px;
+        height: 120px;
+        margin-top: -60px;
+        cursor: pointer;
+    }
+
+        .carousel .forward:before, .carousel .backward:before {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+            -moz-transition: background-color 0.35s ease-in-out;
+            -webkit-transition: background-color 0.35s ease-in-out;
+            -o-transition: background-color 0.35s ease-in-out;
+            -ms-transition: background-color 0.35s ease-in-out;
+            transition: background-color 0.35s ease-in-out;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .carousel .forward:after, .carousel .backward:after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 40%;
+            margin: -1.50px 0 0 0;
+            background: url("images/arrow.svg") no-repeat center center;
+        }
+
+        .carousel .forward:hover:before, .carousel .backward:hover:before {
+            background-color: rgba(239, 131, 118, 0.75);
+        }
+
+    .carousel .forward {
+        right: 0;
+    }
+
+        .carousel .forward:before {
+            right: -30px;
+        }
+
+        .carousel .forward:after {
+            right: -0.250px;
+        }
+
+    .carousel .backward {
+        left: 0;
+    }
+
+        .carousel .backward:before {
+            left: -30px;
+        }
+
+        .carousel .backward:after {
+            left: -0.250px;
+            -moz-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            -ms-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+
+    .carousel .reel {
+        white-space: nowrap;
+        position: relative;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 20px 0 40px;
+    }
+
+    .carousel article {
+        display: inline-block;
+        width: 180px;
+        height: 300px;
+        padding: 0 10px 30px 10px;
+        margin: 0 20px 0 0;
+        white-space: normal;
+        opacity: 1.0;
+        -moz-transition: opacity 0.75s ease-in-out;
+        -webkit-transition: opacity 0.75s ease-in-out;
+        -ms-transition: opacity 0.75s ease-in-out;
+        transition: opacity 0.75s ease-in-out;
+    }
+
+        .carousel article.loading {
+            opacity: 0;
+        }
+
+        .carousel article .image {
+            position: relative;
+            left: 0px;
+            top: 0;
+            width: auto;
+            margin-right: -20px;
+            margin-bottom: 30px;
+        }
+            .carousel article .image img{
+                width: 180px;
+                border-radius: 15px;
+            }
+
+            .carousel article .image img:hover {
+                transition: all .2s;
+                box-shadow: 3px 3px 20px #000;
+            }
+
+        .carousel article p {
+            text-align: center;
+        }
+    .carousel h3 {
+        color: #fff;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .carousel > p {
+        color: #fff;
+        font-weight: 600; 
+        font-size: 1.1em;
+        margin: 0;
+        padding: 0 0 15px 57px;      
+    }
+
+.playlist {
+    width: calc(70% - 100px);
+    padding-right: 50px;
+}
+.playlist a {
+    display: flex;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 20px 40px;
+    border-radius: 15px;
+    align-items: center;
+}
+    .playlist a:hover {
+        background: #666;
+        box-shadow: 1px 1px 30px #000;
+        transition: all .2s;
+    }
+
+.playlist img {
+    width: 50px;
+    height: 50px;
+}
+
+
+
+.playlist p {
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    padding: 0 20px;
+}
+    .playlist p:nth-child(2) {
+        width: 300px;
+    }
+    .playlist p:nth-child(3) {
+        width: 180px;
+    }
+    .playlist p:nth-child(4) {
+        width: 80px;
+    }
+
+    .playlist > p {
+        color: #fff;
+        font-weight: 600; 
+        font-size: 1.1em;
+        margin: 0;
+        padding: 0 0 15px 7px;
+        line-height: 38.13px;      
+    }
+
+
+
+#user {
+    display: flex;
+    padding: 40px;
+
+}
+
+    .user-img img { 
+        width: 70px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+    }
+
+    .user-info p { 
+        color: #fff; 
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .user-info p:first-child { 
+        font-weight: 900;
+        font-size: 1.1em;
+    }
+
+
+
+    #weather {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+
+
+    .myPic {
+        width: 100%;
+        padding: 50px;    
+    }
+
+        .myPic ul {
+            display: flex;
+            flex-wrap: wrap;
+            
+            
+        }
+
+        .myPic li {
+            width: 330px;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 0 50px 50px 0;
+        }
+
+        .myPic img {
+            position: relative;
+            transform: translate(0, -50%);
+            top: 50%;
+
+        }
+
+
+        .myPic button {
+            width: 100%;
+            height: 100%;
+
+            background: none;  
+            border: 5px solid #fff;
+            border-radius: 15px;
+            margin-bottom: 40px; 
+            cursor: pointer; 
+        }
+
+            .myPic button:hover {
+                transition: all .2s;
+                border: 5px solid yellow;
+            }
+
+        .myPic button::before {
+            content: '\f067';
+            color: #fff;
+            font-size: 3em;
+            height: 170px;
+            line-height: 170px;
+            position: relative;
+            left: 0px;
+            top: 0px;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+        }
+            .myPic button:hover::before {
+                transition: all .2s;
+                color: yellow;
+            }
+
+
+        

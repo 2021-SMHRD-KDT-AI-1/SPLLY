@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>OneMusicList</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <!--  <link rel="stylesheet" href="assets/css/main.css" />-->
+      <!--  <link rel="stylesheet" href="assets/css/style2.css" />-->
+      <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+   </head>
+   <link rel="stylesheet" href="assets/css/detailPlaylist.css">
+
+
+<body class="no-sidebar is-preload">
+
+    <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="index.html">My Page</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+                                       
+    
+    <section>
+        <div class="album-info">
+            <img src="assets/img/pic03.jpg">
+            <div>
+                <h2>Ksdhf의 플레이리스트</h2>
+                <p>#asd, #asd, #asd</p>
+                <div class="actions">
+                    <div class="play">Play(전체재생)</div>
+                    <input type="checkbox" class="play-all" onclick="selectAll(this)">전체 선택</input>
+                    <script>
+                        function selectAll(selectAll)  {
+                            document.getElementsByName('input_check').forEach((checkbox) => {
+                                checkbox.checked = selectAll.checked;
+                            })
+                        }
+                    </script>
+                    <div class="play-plus">플레이리스트에 담기</div>
+                </div>
+            </div>    
+        </div>
+            
+            
+        <div class="album-tracks">
+            <ol>
+                <input type="checkbox" class="input_check" name="input_check"> <li> <span> <img src="assets/img/pic05.jpg"> getSong_name()</span><span>getSingers</span><span>3:49</span></li>
+                <input type="checkbox" class="input_check" name="input_check"> <li> <span> <img src="assets/img/pic05.jpg"> getSong_name()</span><span>getSingers</span><span>3:49</span></li>
+                <input type="checkbox" class="input_check" name="input_check"> <li> <span> <img src="assets/img/pic05.jpg"> getSong_name()</span><span>getSingers</span><span>3:49</span></li>
+                <input type="checkbox" class="input_check" name="input_check"> <li> <span> <img src="assets/img/pic05.jpg"> getSong_name()</span><span>getSingers</span><span>3:49</span></li>
+                <input type="checkbox" class="input_check" name="input_check"> <li> <span> <img src="assets/img/pic05.jpg"> getSong_name()</span><span>getSingers</span><span>3:49</span></li>
+                <input type="checkbox" class="input_check" name="input_check"> <li> <span> <img src="assets/img/pic05.jpg"> getSong_name()</span><span>getSingers</span><span>3:49</span></li>
+                <input type="checkbox" class="input_check" name="input_check"> <li> <span> <img src="assets/img/pic05.jpg"> getSong_name()</span><span>getSingers</span><span>3:49</span></li>
+                <input type="checkbox" class="input_check" name="input_check"> <li> <span> <img src="assets/img/pic05.jpg"> getSong_name()</span><span>getSingers</span><span>3:49</span></li>
+                <input type="checkbox" class="input_check" name="input_check"> <li> <span> <img src="assets/img/pic05.jpg"> getSong_name()</span><span>getSingers</span><span>3:49</span></li>
+                <input type="checkbox" class="input_check" name="input_check"> <li> <span> <img src="assets/img/pic05.jpg"> getSong_name()</span><span>getSingers</span><span>3:49</span></li>
+                <input type="checkbox" class="input_check" name="input_check"> <li> <span> <img src="assets/img/pic05.jpg"> getSong_name()</span><span>getSingers</span><span>3:49</span></li>
+                <input type="checkbox" class="input_check" name="input_check"> <li> <span> <img src="assets/img/pic05.jpg"> getSong_name()</span><span>getSingers</span><span>3:49</span></li>
+            </ol>
+        </div>
+    </section>
+                           
+                        
+
+   </body>
+</html>

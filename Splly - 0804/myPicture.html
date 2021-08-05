@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/rlawjddn.css">
+
+    <!-- music player -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- weather icon -->
+    <link rel="stylesheet" href="assets/css/weather.css">
+
+    <!-- weather icon -->
+    <link rel="stylesheet" href="assets/css/plus.css">
+
+    
+</head>
+<body>
+
+    <!-- Wrapper -->
+        <div id="wrapper">
+
+            <nav>
+                <div id="user">
+                    <div class="user-img"><img src="assets/img/pic01.jpg"></div>
+                    <div class="user-info">
+                        <p>ASDjjas</p>
+                        <p>asdasd</p>
+                    </div>
+                </div>
+                <ul>
+                    <li class="menu"><a href="">마이 페이지</a></li>
+                    <li class="menu"><a href="">내 플레이리스트</a></li>
+                    <li class="menu"><a href="">플레이리스트 만들기</a></li>
+                    <li class="menu"><a href="">내 사진</a></li>
+                    <li class="menu"><a href="">공유</a></li>
+                </ul>
+
+            </nav>
+
+            <section id="ufds">
+                <form action="">
+                    <input type="text" placeholder="Search">
+                </form>
+                <div id="weather">
+                    <div class="icon sun-shower">
+                        <div class="cloud"></div>
+                        <div class="sun">
+                          <div class="rays"></div>
+                        </div>
+                        <div class="rain"></div>
+                      </div>
+                </div>
+                <div id="main">
+                    <section class="myPic">
+                        <ul>
+                            <li>
+                                <button value="추가" onclick="plusOpen()"></button>
+                                <script>
+                                    function plusOpen() {
+                                        document.getElementById('posts').classList.add('on');						
+                                    }	
+                                </script>
+                            </li>
+                            <li><img src="assets/img/img01.jpg"></li>
+                            <li><img src="assets/img/img02.jpg"></li>
+                            <li><img src="assets/img/img03.jpg"></li>
+                            <li><img src="assets/img/img02.jpg"></li>
+                            <li><img src="assets/img/img03.jpg"></li>
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- Posts -->
+                    <section class="posts" id="posts">
+                        <form action="NewFile.jsp" method="post" enctype="multipart/form-data">
+
+                            <div class="file-upload">
+                                <div class="image-upload-wrap">
+                                    <input class="file-upload-input" type='file' name="file1" onchange="readURL(this);" accept="image/*" />
+                                    <div class="drag-text">
+                                        <h3>Drag and drop a file<br>or select add Image</h3>
+                                    </div>
+                                </div>
+                                <div class="file-upload-content">
+                                    <img class="file-upload-image" src="#" alt="your image" />
+                                    <div class="image-title-wrap">
+                                        <button type="button" onclick="removeUpload()" class="remove-image"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="send">
+                                <input class="send-button" type="submit" value="SEND">
+                            </div>    
+                        </form>
+                        <button class="plus-close" value="닫기" onclick="plusClose()"></button>
+                        <script>
+                            function plusClose() {
+                                document.getElementById('posts').classList.remove('on');						
+                            }	
+                        </script>
+                    </section>
+
+            </section>
+
+            
+
+            <aside>
+                
+          
+          <div class="audio-player" style="margin: 0 auto">
+            <div class="timeline">
+              <div class="progress"></div>
+            </div>
+            <div class="controls">
+              <div class="play-container">
+                <div class="toggle-play play">
+              </div>
+              </div>
+              <div class="time">
+                <div class="current">0:00</div>
+                <div class="divider">/</div>
+                <div class="length"></div>
+              </div>
+              <div class="name"> <img src="assets/img/pic03.jpg" width="50" style="margin-right: 20px;">  The Weeknd - After Hours</div>
+          
+              <div class="volume-container">
+                <div class="volume-button">
+                  <div class="volume icono-volumeMedium"></div>
+                </div>
+                
+                <div class="volume-slider">
+                  <div class="volume-percentage"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- partial -->
+                  
+            <script  src="assets/js/player.js"></script>
+                     
+                     
+            </aside>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>
+            function readURL(input) {
+                
+                if (input.files && input.files[0]) {
+
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('.image-upload-wrap').hide();
+
+                        $('.file-upload-image').attr('src', e.target.result);
+                        $('.file-upload-content').show();
+
+                        $('.image-title').html(input.files[0].name);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+
+                } else {
+                    removeUpload();
+                }
+            }
+
+            function removeUpload() {
+                $('.file-upload-input').val("");
+                $('.file-upload-content').hide();
+                $('.image-upload-wrap').show();
+            }
+
+            $('.image-upload-wrap').bind('dragover', function () {
+                $('.image-upload-wrap').addClass('image-dropping');
+            });
+
+            $('.image-upload-wrap').bind('dragleave', function () {
+                $('.image-upload-wrap').removeClass('image-dropping');
+            });
+
+        </script>
+
+
+</body>
+</html>
